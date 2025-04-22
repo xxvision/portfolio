@@ -1,0 +1,24 @@
+@charset "utf-8";
+@import url('font.css');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Pretendard';
+    color: #333;
+}
+:root{
+    --main-font-family : 'Pretendard-Regular';
+    --main-black-color : #111111;
+    --main-gray-color : #eeeeee;
+    --main-white-color : #ffffff;
+    --cooperblack-font:'Cooper Black';
+}
+img{
+    object-fit: cover;
+}
+.inner {
+    margin: 0 auto;
+}
