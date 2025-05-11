@@ -5,6 +5,11 @@
     scroll-behavior: smooth;
   }
  */
+body{
+    cursor: none;
+    background-color: #111;
+}
+
 header {
     width: 100%;
     height: 80px;
@@ -27,7 +32,9 @@ header h1 {
     font-size: 50px;
     transition: color 0.3s ease;
 }
-
+header h1 a{
+    cursor: none;
+}
 header nav {
     position: relative; /* 기준이 될 요소 */
     width: 85%;
@@ -74,6 +81,8 @@ header nav ul li a {
     display: block;
     font-size: 32px;
     font-weight: 400;
+    cursor: none;
+
 }
 
 header nav ul li span {
@@ -112,10 +121,11 @@ header nav .logo {
 
 }
 
-.main_typography .typography {
-    width: 1564px;
-    height: 182px;
-    background-image: url(../img/main_page/Getintouch_white.png);
+.main_typography .typography img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* background-image: url(../img/main_page/Getintouch_white2.png); */
 }
 
 
@@ -136,20 +146,14 @@ header nav .logo {
     flex-direction: column;
     gap: 5px;
     position: relative;
+    background-image: url(../img/collage.png);
+    border-radius: 30px;
+    border: 1px solid #fff;
 }
 
 
-/* box_tb 스케일 커지는 효과 */
-/* .box_tb {
-    transition: transform 0.3s ease;
-    transform-origin: center center;
-  }
   
-  .box_tb:hover {
-    transform: scale(1.05);
-  } */
-  
-.projects .box_tb .collage {
+/* .projects .box_tb .collage {
     width: 421px;
     height: 656px;
     background-image: url(../img/main_page/collage.png);
@@ -171,7 +175,7 @@ header nav .logo {
     height: 403px;
     border-radius: 30px;
     background-image: url(../img/main_page/bottom.jpg);
-}
+} */
 
 .projects .right_con {
     flex: 1;
@@ -182,6 +186,34 @@ header nav .logo {
     object-fit: cover;
     background-repeat: no-repeat;
 }
+
+.projects .right_con::after{
+    content: '디자인은 변화하는 맥락과 사용자와 함께 흐르며,\A 그 속에서 균형을 유지해야 합니다.\A 조화로운 움직임은 디자인에 몰입감과 \A지속적인 생명력을 더합니다.';
+    white-space:pre;
+    color: #fff;
+    width: 359px;
+    height: 200px;
+    position: absolute;
+    background: #333;
+    top: 14%;
+    left: 0.8%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: 2;
+    font-weight: 300;
+    transition: top 0.6s ease, opacity 0.6s ease;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+.projects .right_con.show-after::after {
+    top: 14%;
+    opacity: 1;
+    
+}
+
 
 .projects .right_con video {
     position: absolute;
@@ -210,6 +242,7 @@ header nav .logo {
     align-items: center;
     justify-content: center;
     transition: .4s all;
+    cursor: none;
 }
 
 .projects .right_con .scroll_btn:hover {
@@ -226,11 +259,11 @@ header nav .logo {
 
 .projects .right_con p.t {
     color: var(--main-white-color);
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 300;
     position: absolute;
-    right: 12px;
-    bottom: 12px;
+    right: 16px;
+    bottom: 10px;
 }
 
 /* about me */
@@ -304,13 +337,13 @@ header nav .logo {
 .left_cross {
     width: 90px;
     height: 420px;
-    background-image: url(../img/main_page/cross.png);
+   /*  background-image: url(../img/main_page/cross.png); */
 }
 
 .right_cross {
     width: 90px;
     height: 420px;
-    background-image: url(../img/main_page/cross.png);
+    /* background-image: url(../img/main_page/cross.png); */
 }
 
 .object_text {
@@ -323,8 +356,8 @@ header nav .logo {
 
 
 .object_text img {
-    width: 540px;
-    height: 540px;
+    width: 45%;
+    height: auto;
 }
 
 
@@ -344,6 +377,7 @@ header nav .logo {
 }
 
 .project1 {
+    margin-top: 100px;
     width: 100%;
     height: 1525px;
     background: #111;
@@ -357,11 +391,15 @@ header nav .logo {
     right: 20%;
     top: 1%;
 }
+.infinite_rotating_logo.colliding {
+    filter: hue-rotate(90deg) brightness(1.5);
+}
 
 /* 뚫린 원 회전 */
 img.infinite_rotating_logo {
     animation: rotate_image 10s linear infinite;
     transform-origin: 50% 50%;
+    
 }
 
 @keyframes rotate_image {
@@ -369,6 +407,9 @@ img.infinite_rotating_logo {
         transform: rotate(360deg);
     }
 }
+
+
+
 
 .project1 h2{
     color: var(--main-white-color);
@@ -387,6 +428,7 @@ img.infinite_rotating_logo {
     border-top: 1px solid #fff;
     margin-top: 58px;
     padding-top: 56px;
+    
 }
 .project1 .name{
     display: flex;
@@ -413,6 +455,8 @@ article:hover .name h3{
     background: linear-gradient(to bottom, transparent 50%, #eee 50%);
     background-size: 100% 200%;
     background-position: 0 bottom;
+    cursor: none;
+
 }
 article .name img{
     opacity: 0;
@@ -432,7 +476,7 @@ article:hover .name img{
     transition: opacity 0.3s ease;
   }
   .thum2{
-    background-image: url(../img/cosmatic.jpg) ;
+    background-image: url(../img/cosmatic.png) ;
   }
   article:hover .thum1 {
     opacity: 1;
@@ -471,6 +515,7 @@ article:hover .name img{
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
 
   .my_works video {
@@ -527,6 +572,8 @@ article:hover .name img{
     font-weight: bold;
     backdrop-filter: blur(4px);
     background-size: cover;
+    cursor: none;
+
   }
   .bk1{
     background-image: url(../img/main_page/work1.png);
@@ -573,17 +620,21 @@ article:hover .name img{
     color: #222;
     user-select: none;
     /* z-index: 10; */
-    pointer-events: none;
+    pointer-events: auto;
     cursor: grab;
     z-index: 20;
+
 }
 
 canvas {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 0; /* 배경에 깔림 */
-    pointer-events: all;
+    width: 100%;
+    /* z-index: 0; */ /* 배경에 깔림 */
+    z-index: 2;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 #skill_all {
@@ -591,7 +642,6 @@ canvas {
     height: 80%;
     overflow: hidden;
     position: relative;
-
     pointer-events: auto;
 }
 
@@ -601,10 +651,11 @@ canvas {
     width: 100%;
     height: 100vh;
     /* pointer-events: none; */
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1;
-
+/*     opacity: 0;
+    visibility: hidden; */
+    opacity: 0.01; /* ✅ 확인용: 보이게 하자 */
+    visibility: visible;
+    z-index: 2;
     pointer-events: auto;
 }
 
@@ -709,6 +760,16 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .4s all;
+}
+.contact_all .contact a{
+    cursor: none;
+}
+.contact_all .contact:hover{
+    color: #111;
+    background: linear-gradient(to bottom, transparent 50%, #f4d75c 50%);
+    background-size: 100% 200%;
+    background-position: 0 bottom;
 }
 .contact_all .line{
     flex: 1;
@@ -770,11 +831,15 @@ footer{
     justify-content: center;
     transition: .4s all;
 }
+
 .message .send:hover{
     color: #111;
-    background: linear-gradient(to bottom, transparent 50%, #ccc 50%);
+    background: linear-gradient(to bottom, transparent 50%, #f4d75c 50%);
     background-size: 100% 200%;
     background-position: 0 bottom;
+}
+.message a{
+    cursor: none;
 }
 .social{
     
@@ -791,13 +856,16 @@ footer{
 }
 .insta{
     margin-top: 20px;
-    background: linear-gradient(to left, #000 50%, #5D7063 50%);
+    background: linear-gradient(to left, #000 50%, #F80261 50%);
     background-size: 200% 100%;
     background-position: right;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: background-position 0.4s ease;
     line-height: 1.3;
+}
+.insta a{
+    cursor: none;
 }
 .insta:hover{
     color: var(--main-white-color);
@@ -806,18 +874,25 @@ footer{
 }
 .kakao{
     margin-top: 24px;
-    background: linear-gradient(to left, #000 50%, #5D7063 50%);
+    background: linear-gradient(to left, #000 50%, #FDE500 50%);
     background-size: 200% 100%;
     background-position: right;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: background-position 0.4s ease;
     line-height: 1.3;
+
+}
+.kakao a{
+    cursor: none;
 }
 .kakao:hover{
+    cursor: none;
+
     color: var(--main-white-color);
     text-decoration-line: none;
     background-position: left;
+    
 }
 
 
@@ -845,10 +920,60 @@ footer{
     mix-blend-mode: difference;
     z-index: 99999;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.2s ease;
+    /* transition: opacity 0.3s ease, transform 0.2s ease; */
   }
   
+  .cursor-inner,
+  .cursor-outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    /* transition: transform 0.05s ease-out; */
+  }
+  
+  .cursor-inner {
+    width: 16px;
+    height: 16px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    mix-blend-mode: difference;
 
+  }
+  
+  .cursor-outer {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: transform 0.2s ease-out;
+    mix-blend-mode: difference;
 
+  }
 
+  .cursor-inner.hover {
+    width: auto;
+    height: auto;
+    padding: 4px 8px;
+    background: transparent;
+    border-radius: 6px;
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+
+  .cursor-outer.hover {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .cursor-inner.hover::before {
+    content: "View More";
+    color: white;
+  }
+  
+  .cursor-outer.hover {
+    transform: scale(1.5);
+  }
     

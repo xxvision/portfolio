@@ -1,1 +1,63 @@
 @charset "utf-8";
+@media screen and (max-width:1024px){
+    header{
+    }
+    header h1{
+        display: none;
+    }
+    header nav{
+        width: 100%;
+    }
+    header nav ul.navMenu{
+        padding: 0 20px;
+    }
+    .main_typography{
+        height: 200px;
+    }
+    header nav ul li a{
+        font-size: 28px;
+    }
+    .main_typography{
+ 
+    }
+    .main_typography .typography img{
+        width: 95%;
+        height: auto;
+        background-size: contain; /* 이미지가 영역 안에 맞게 축소됨 */
+        background-repeat: no-repeat;
+        background-position: center;
+        aspect-ratio: 10 / 1; /* 또는 적절한 비율 지정 (이미지가 가로로 긴 경우) */
+
+      }
+      .projects .box_tb{
+        display: none;
+      }
+      .projects .right_con{
+        /* background-image: none; */
+
+    }
+
+
+
+
+    /* footer */
+    footer{
+
+    }
+    .git_footer {
+        height: auto; /* 고정 높이 해제 */
+        padding: 40px 0;
+      }
+      .git_footer img {
+        width: 100%;
+        height: auto;
+      }
+      .object_text p{
+        /* width: 80%; */
+        font-size: 18px;
+      }
+      .contact_all .contact{
+        font-size: 20px;
+        font-weight: 500;
+      }
+}

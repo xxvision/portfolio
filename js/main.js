@@ -1,13 +1,14 @@
 
 // SCROLL TO EXPLORE 클릭시 ABOUT ME 페이지 시작점으로 스크롤 이동
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollBtn = document.querySelector(".scroll_btn");
-  const aboutSection = document.querySelector(".about1");
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollBtn = document.querySelector('.scroll_btn');
+  const rightCon = document.querySelector('.projects .right_con');
 
-  scrollBtn.addEventListener("click", function (e) {
-    e.preventDefault(); // a 태그 기본 동작 방지
-    aboutSection.scrollIntoView({ behavior: "smooth" }); // 부드러운 스크롤
-  });
+  if (scrollBtn && rightCon) {
+      scrollBtn.addEventListener('click', function() {
+          rightCon.classList.toggle('show-after');
+      });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -32,11 +33,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const scrollBtn = document.querySelector(".navMenu .contact");
-  const aboutSection = document.querySelector("footer");
 
   scrollBtn.addEventListener("click", function (e) {
-    e.preventDefault(); // a 태그 기본 동작 방지
-    aboutSection.scrollIntoView({ behavior: "smooth" }); // 부드러운 스크롤
+    e.preventDefault();
+
+    // 페이지 맨 아래로 강제 이동
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
   });
 });
 
@@ -115,8 +120,8 @@ $(function(){
     } else {
       $("header h1").css("color", "#fff"); // 기본 색
     }
-  }); */
-
+  });
+ */
 
     //simply scroll about me
     $('.txtAniBox .txtAni').simplyScroll({
@@ -437,7 +442,6 @@ const WALL_THICKNESS = 80;
   });
 
   Composite.add(engine.world, [leftWall, rightWall, ground]);
-
   Render.run(render);
   runner = Runner.create();
   Runner.run(runner, engine);
@@ -490,24 +494,67 @@ const draggableElements = document.querySelectorAll(".tag, .badge, .bubble");
 
   const cursor = document.querySelector('.custom-cursor');
   const workItems = document.querySelectorAll('.work-item');
+  const project = document.querySelectorAll('.project1 article');
   
-  // 마우스 움직일 때 위치 업데이트
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.top = `${e.clientY}px`;
-    cursor.style.left = `${e.clientX}px`;
-  });
-  
-  // work-item 위에서만 커서 보이기
-  workItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      cursor.style.opacity = 1;
-    });
-  
-    item.addEventListener('mouseleave', () => {
-      cursor.style.opacity = 0;
-    });
-  });
 
+
+
+  //마우스 커서
+
+// 추가 커서용 코드
+const cursorInner = document.querySelector(".cursor-inner");
+const cursorOuter = document.querySelector(".cursor-outer");
+
+let mouseX = 0, mouseY = 0;
+let outerX = 0, outerY = 0;
+let innerX = 0, innerY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animateCursor() {
+  // 외곽 원 부드럽게 따라감
+  outerX += (mouseX - outerX) * 0.2;
+  outerY += (mouseY - outerY) * 0.2;
+  cursorOuter.style.transform = `translate(${outerX}px, ${outerY}px) translate(-50%, -50%)`;
+
+  // 안쪽 점도 약간 부드럽게 따라오게 설정
+  innerX += (mouseX - innerX) * 1;
+  innerY += (mouseY - innerY) * 1;
+  cursorInner.style.transform = `translate(${innerX}px, ${innerY}px) translate(-50%, -50%)`;
+
+  
+  requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+
+
+
+workItems.forEach(item => {
+  item.addEventListener("mouseenter", () => {
+    cursorOuter.classList.add("hover");
+    cursorInner.classList.add("hover");
+  });
+  item.addEventListener("mouseleave", () => {
+    cursorOuter.classList.remove("hover");
+    cursorInner.classList.remove("hover");
+  });
+});
+
+project.forEach(item => {
+  item.addEventListener("mouseenter", () => {
+    cursorOuter.classList.add("hover");
+    cursorInner.classList.add("hover");
+  });
+  item.addEventListener("mouseleave", () => {
+    cursorOuter.classList.remove("hover");
+    cursorInner.classList.remove("hover");
+  });
+});
 
 
 });
