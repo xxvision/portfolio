@@ -1,0 +1,995 @@
+@charset "utf-8";
+
+/* 스크롤 호버 부드럽게 */
+/* html {
+    scroll-behavior: smooth;
+  }
+ */
+body{
+    cursor: none;
+    background-color: #111;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: var(--main-white-color);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    width: 295px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    line-height: 80px;
+    font-family: 'Cooper Black';
+    font-size: 50px;
+    transition: color 0.3s ease;
+}
+header h1 a{
+    cursor: none;
+}
+header nav {
+    position: relative; /* 기준이 될 요소 */
+    width: 85%;
+    height: 100%;
+    background: var(--main-white-color);
+    color: var(--main-black-color);
+    border-radius: 30px 0 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: width 0.4s ease;
+    padding: 0 80px 0 20px; /* 오른쪽 여유 줘야 logo가 안 겹침 */
+}
+
+header nav.shrink {
+    width: 100px;
+}
+header nav ul.navMenu {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+header nav.shrink .navMenu {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-20px);
+}
+
+header nav.shrink li:not(:last-child) {
+    display: none;
+}
+
+
+header nav ul li {
+    transition: opacity 0.4s ease;
+}
+
+header nav ul li a {
+    display: block;
+    font-size: 32px;
+    font-weight: 400;
+    cursor: none;
+    background: linear-gradient(to left, #000 50%, #f4d75c 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.4s ease;
+}
+header nav ul li a:hover{
+    color: var(--main-white-color);
+    text-decoration-line: none;
+    background-position: left;
+}
+header nav ul li span {
+    font-size: 18px;
+}
+
+header nav .logo {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-size: cover;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url(../img/ad029e5bb6d21f3983767f9d8989e428.jpg);
+    cursor: pointer;
+    transition: .6s;
+}
+header nav .logo:hover{
+    /* scale: 1.2; */
+}
+
+
+.main_page {
+    width: 100%;
+    height: 1080px;
+    background: var(--main-black-color);
+    padding-top: 80px;
+}
+
+.main_typography {
+    width: 100%;
+    height: 316px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_typography .typography img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* background-image: url(../img/main_page/Getintouch_white2.png); */
+}
+
+
+
+
+.projects {
+    width: 100%;
+    height: 680px;
+    padding: 0 27px 27px 27px;
+    display: flex;
+    gap: 27px;
+}
+
+.projects .box_tb {
+    width: 639px;
+    height: 656px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    background-image: url(../img/collage.png);
+    border-radius: 30px;
+    border: 1px solid #fff;
+}
+
+
+  
+/* .projects .box_tb .collage {
+    width: 421px;
+    height: 656px;
+    background-image: url(../img/main_page/collage.png);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.projects .box_tb .top {
+    width: 100%;
+    height: 248px;
+    border-radius: 30px;
+    background: #E3DBB4;
+}
+
+.projects .box_tb .bottom {
+    width: 100%;
+    height: 403px;
+    border-radius: 30px;
+    background-image: url(../img/main_page/bottom.jpg);
+} */
+
+.projects .right_con {
+    flex: 1;
+    height: 656px;
+    background-image: url(../img/main_page/Subtract.png);
+    padding: 15px 10px 10px 5px;
+    position: relative;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 656px; /* 가로는 100%, 세로는 고정 */
+    background-position: center top; /* 필요시 위치 조정 */
+}
+
+.projects .right_con::after{
+    content: '디자인은 변화하는 맥락과 사용자와 함께 흐르며,\A 그 속에서 균형을 유지해야 합니다.\A 조화로운 움직임은 디자인에 몰입감과 \A지속적인 생명력을 더합니다.';
+    white-space:pre;
+    color: #fff;
+    width: 359px;
+    height: 200px;
+    position: absolute;
+    background: #333;
+    top: 14%;
+    left: 0.8%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: 2;
+    font-weight: 300;
+    transition: top 0.6s ease, opacity 0.6s ease;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+.projects .right_con.show-after::after {
+    top: 14%;
+    opacity: 1;
+    
+}
+
+
+.projects .right_con video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 74%;
+}
+
+.projects .right_con img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.projects .right_con .scroll_btn {
+    width: 18.5vw;
+    height: 49px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    color: var(--main-white-color);
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+    transition: .4s all;
+    cursor: none;
+}
+
+.projects .right_con .scroll_btn:hover {
+    color: #111;
+    background: linear-gradient(to bottom, transparent 50%, #eee 50%);
+    background-size: 100% 200%;
+    background-position: 0 bottom;
+}
+
+.projects .right_con .scroll_btn p {
+    font-size: 1.3vw;
+    font-weight: 300;
+}
+
+.projects .right_con p.t {
+    color: var(--main-white-color);
+    font-size: 1.2vw;
+    font-weight: 300;
+    position: absolute;
+    right: 1%;
+    bottom: 10px;
+}
+
+/* about me */
+
+.about1 {
+    width: 100%;
+    height: 1525px;
+    background: var(--main-black-color);
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.txtAniBox {
+    width: 100%;
+    height: 179px;
+}
+
+.txtAniBox .simply-scroll-clip {
+    overflow: hidden;
+}
+
+.simply-scroll-list {
+    display: flex;
+}
+
+.about1 ul.simply {
+    /* gap 주면 안됨!! 마진으로! */
+    display: flex;
+    /* gap: 157px; */
+    align-items: center;
+    color: var(--main-white-color);
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform-origin: left top;
+    /* margin-right: 157px; */
+}
+
+.about1 ul.simply li.text {
+    font-size: 150px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.about1 ul.simply li::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--main-white-color);
+    margin: 0 100px;
+}
+
+.cross_all {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.left_cross {
+    width: 90px;
+    height: 420px;
+   /*  background-image: url(../img/main_page/cross.png); */
+}
+
+.right_cross {
+    width: 90px;
+    height: 420px;
+    /* background-image: url(../img/main_page/cross.png); */
+}
+
+.object_text {
+    margin-top: 129px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.object_text img {
+    width: 45%;
+    height: auto;
+}
+
+
+
+.object_text h2 {
+    margin-top: 67px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.object_text p {
+    margin-top: 19px;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 150%;
+}
+
+.project1 {
+    margin-top: 100px;
+    width: 100%;
+    height: 1525px;
+    background: #111;
+    position: relative;
+    padding: 145px 64px 0 64px;
+    overflow: hidden;
+}
+
+.project1 img.infinite_rotating_logo {
+    position: absolute;
+    right: 20%;
+    top: 1%;
+}
+.infinite_rotating_logo.colliding {
+    filter: hue-rotate(90deg) brightness(1.5);
+}
+
+/* 뚫린 원 회전 */
+img.infinite_rotating_logo {
+    animation: rotate_image 10s linear infinite;
+    transform-origin: 50% 50%;
+    
+}
+
+@keyframes rotate_image {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+.project1 h2{
+    color: var(--main-white-color);
+    text-align: right;
+    font-size: 60px;
+    font-weight: 200;
+    line-height: 1.1;
+}
+.project1 .bk{
+    width: 100%;
+    height: 20%;
+}
+.project1 article{
+    width: 100%;
+    height: 22%;
+    border-top: 1px solid #fff;
+    margin-top: 58px;
+    padding-top: 56px;
+    
+}
+.project1 .name{
+    display: flex;
+    gap: 20px;
+}
+.project1 article .number{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--main-white-color);
+}
+.project1 article h3{
+    color: #fff;
+    font-size: 60px;
+    font-weight: 500;
+    flex: 1;
+    transition: .4s all;
+}
+article:hover .name h3{
+    color: var(--main-black-color);
+    background: linear-gradient(to bottom, transparent 50%, #eee 50%);
+    background-size: 100% 200%;
+    background-position: 0 bottom;
+    cursor: none;
+
+}
+article .name img{
+    opacity: 0;
+    transition: .6s;
+}
+article:hover .name img{
+    opacity: 1;
+}
+.thum1 {
+    width: 20%;
+    height: 100%;
+    background-image: url(../img/HD.PNG) ;
+    position: absolute; /* 중요 */
+    pointer-events: none; /* 마우스 안막기 */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .thum2{
+    background-image: url(../img/cosmatic.png) ;
+  }
+  article:hover .thum1 {
+    opacity: 1;
+  }
+  article {
+    position: relative;
+    /* cursor: url('../img/cursor.png'), auto; */
+  }
+
+
+  /* My Works */
+  .my_works{
+    width: 100%;
+    height: 100vh;
+    background: var(--main-black-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .pin-section {
+    height: 400vh; /* 콘텐츠 개수에 따라 늘려야 함 (예: 3개면 100vh * (1 고정 + 3 이동) = 400vh) */
+    position: relative;
+  }
+  
+  .my_works {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .my_works video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  .work-sections {
+    position: relative;
+    z-index: 1;
+    height: calc(100vh * 3); /* 섹션 개수 만큼 곱해야 함 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    padding-bottom: 5%;
+  }
+  
+  .work-item {
+    position: sticky;
+    top: 10vh;
+    height: 90vh;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+    opacity: 1;
+    z-index: 1;
+    border-radius: 50px;
+
+  }
+  /* 링크를 섹션처럼 보이게! */
+.work-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    font-size: 4rem;
+    font-weight: bold;
+    backdrop-filter: blur(4px);
+    background-size: cover;
+    cursor: none;
+
+  }
+  .bk1{
+    background-image: url(../img/main_page/work1.png);
+  }
+  .bk2{
+    background-image: url(../img/main_page/work2.png);
+  }
+  .bk3{
+    background-image: url(../img/main_page/work3.jpg);
+  }
+
+
+
+  /* skills */
+  .skills {
+    width: 100%;
+    height: 100vh;
+    background: var(--main-black-color);
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    overflow: hidden; /* 태그가 밖으로 안 튀어나가게 */
+    background-image: url(../img/myworks.mp4);
+    /* z-index: 1; */
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.tag {
+    position: absolute;
+    /* Matter.js 위치 적용을 위해 */
+    will-change: transform;
+    user-select: none;
+    /* 선택 방지 */
+    cursor: grab;
+    padding: 10px 20px;
+    background-color: var(--main-white-color);
+    border-radius: 20px;
+    font-weight: bold;
+    color: #222;
+    user-select: none;
+    /* z-index: 10; */
+    pointer-events: auto;
+    cursor: grab;
+    z-index: 20;
+
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* z-index: 0; */ /* 배경에 깔림 */
+    z-index: 2;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#skill_all {
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    position: relative;
+    pointer-events: auto;
+}
+
+
+#helper {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    /* pointer-events: none; */
+/*     opacity: 0;
+    visibility: hidden; */
+    opacity: 0.01; /* ✅ 확인용: 보이게 하자 */
+    visibility: visible;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+
+
+/* ------------------ */
+.txtAniBox {
+    width: 100%;
+    height: 179px;
+}
+
+.txtAniBox .simply-scroll-clip {
+    overflow: hidden;
+}
+
+.simply-scroll-list {
+    display: flex;
+}
+
+.skills ul.simply {
+    /* gap 주면 안됨!! 마진으로! */
+    display: flex;
+    /* gap: 157px; */
+    align-items: center;
+    color: var(--main-white-color);
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform-origin: left top;
+    /* margin-right: 157px; */
+}
+
+.skills ul.simply li.text {
+    font-size: 150px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.skills ul.simply li::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--main-white-color);
+    margin: 0 100px;
+}
+
+
+
+.tag.dragging {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: grabbing !important;
+    transition: transform 0.2s ease;
+  }
+  
+  .tag {
+    pointer-events: auto !important; /* ⭐ 이벤트 받도록 변경 */
+    cursor: grab;
+  }
+
+
+/* --------------------------- */
+
+
+
+
+
+/* contact */
+
+footer{
+    width: 100%;
+    height: 100vh;
+    background: var(--main-white-color);
+    padding: 80px 50px 58px 50px;
+    position: sticky;
+    bottom: 0;
+}
+
+/* .footer-wrapper {
+    position: relative;
+    height: 100vh; 
+    z-index: 1;
+} */
+  
+
+.contact_all{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.contact_all .contact{
+    width: 10%;
+    height: 100%;
+    background: #333;
+    border-radius: 20px;
+    color: var(--main-white-color);
+    font-size: 35px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s all;
+}
+.contact_all .contact a{
+    cursor: none;
+}
+.contact_all .contact:hover{
+    color: #111;
+    background: linear-gradient(to bottom, transparent 50%, #f4d75c 50%);
+    background-size: 100% 200%;
+    background-position: 0 bottom;
+}
+.contact_all .line{
+    flex: 1;
+    height: 1px;
+    background: #333;
+}
+.git_footer{
+    width: 100%;
+    height: 466px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-out;
+}
+.git_footer img{
+    width: 100%;
+    height: auto;
+}
+.info_sns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.info{
+    width: 20%;
+    border-top: 1px solid #333;
+    padding-top: 17px;
+    padding-left: 10px;
+    font-size: 25px;
+    font-weight: 400;
+}
+.sns{
+    width: 35%;
+    border-top: 1px solid #333;
+    display: flex;
+    padding-left: 6px;
+}
+.message{
+    width: 55%;
+}
+.sns h3{
+    margin-top: 17px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.message p{
+    margin-top: 20px;
+    font-size: 23px;
+    font-weight: 400;
+}
+.message .send{
+    width: 80%;
+    height: 70%;
+    background: #333;
+    margin-top: 53px;
+    border-radius: 20px;
+    color: var(--main-white-color);
+    font-size: 23px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s all;
+}
+
+.message .send:hover{
+    color: #111;
+    background: linear-gradient(to bottom, transparent 50%, #f4d75c 50%);
+    background-size: 100% 200%;
+    background-position: 0 bottom;
+}
+.message a{
+    cursor: none;
+}
+.social{
+    
+}
+.social h4{
+    font-size: 23px;
+    font-weight: 400;
+    text-decoration-line: underline;
+}
+.social p.id{
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 400;
+}
+.insta{
+    margin-top: 20px;
+    background: linear-gradient(to left, #000 50%, #F80261 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.4s ease;
+    line-height: 1.3;
+}
+.insta a{
+    cursor: none;
+}
+.insta:hover{
+    color: var(--main-white-color);
+    text-decoration-line: none;
+    background-position: left;
+}
+.kakao{
+    margin-top: 24px;
+    background: linear-gradient(to left, #000 50%, #FDE500 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.4s ease;
+    line-height: 1.3;
+
+}
+.kakao a{
+    cursor: none;
+}
+.kakao:hover{
+    cursor: none;
+
+    color: var(--main-white-color);
+    text-decoration-line: none;
+    background-position: left;
+    
+}
+
+
+
+
+
+/* 마우스 커서 */
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    pointer-events: none; /* 마우스 이벤트 방해 X */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    mix-blend-mode: difference;
+    z-index: 99999;
+    opacity: 0;
+    /* transition: opacity 0.3s ease, transform 0.2s ease; */
+  }
+  
+  .cursor-inner,
+  .cursor-outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    /* transition: transform 0.05s ease-out; */
+  }
+  
+  .cursor-inner {
+    width: 16px;
+    height: 16px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    mix-blend-mode: difference;
+
+  }
+  
+  .cursor-outer {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: transform 0.2s ease-out;
+    mix-blend-mode: difference;
+
+  }
+
+  .cursor-inner.hover {
+    width: auto;
+    height: auto;
+    padding: 4px 8px;
+    background: transparent;
+    border-radius: 6px;
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+
+  .cursor-outer.hover {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .cursor-inner.hover::before {
+    content: "View More";
+    color: white;
+  }
+  
+  .cursor-outer.hover {
+    transform: scale(1.5);
+  }
+    
