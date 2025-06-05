@@ -122,10 +122,14 @@ header nav .logo:hover{
     height: 1080px;
     background: var(--main-black-color);
     padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main_typography {
-    width: 100%;
+    width: 95%;
     height: 316px;
     display: flex;
     justify-content: center;
@@ -198,6 +202,8 @@ header nav .logo:hover{
     background-repeat: no-repeat;
     background-size: 100% 656px; /* 가로는 100%, 세로는 고정 */
     background-position: center top; /* 필요시 위치 조정 */
+    z-index: 2;
+
 }
 
 .projects .right_con::after{
@@ -233,8 +239,9 @@ header nav .logo:hover{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 95%;
     height: 74%;
+    z-index: 0;
 }
 
 .projects .right_con img {
