@@ -1,4 +1,33 @@
 @charset "utf-8";
+@media screen and (max-width:1460px){
+      header{
+      justify-content: flex-end;
+    }
+    header h1{
+        display: none;
+    }
+    header nav{
+        width: 100%;
+    }
+    header nav ul.navMenu{
+        padding: 0 20px;
+    }
+    .main_typography{
+        height: 200px;
+    }
+    header nav ul li a{
+        font-size: 28px;
+    }
+      header nav.shrink {
+    width: 100px;
+    margin-left: auto; /* 오른쪽 기준으로 줄어들게 만듦 */
+    border-radius: 30px 0 0 30px;
+    padding-left: 0;
+    }
+  .cross_all{
+    display: none;
+  }
+}
 @media screen and (max-width:1069px){
     header{
       justify-content: flex-end;
@@ -42,12 +71,6 @@
         display: none;
       }
       .projects .right_con{
-        /* background-image: none; */
-/*       background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-origin: border-box;
-      background-clip: border-box; */
       background-image: url(../img/main_page/Subtract2.png);
     }
     
@@ -64,9 +87,6 @@
     /* about me */
     .object_text{
       margin-top: 12%;
-    }
-    .cross_all{
-      display: none;
     }
     .project1 h2{
       font-size: 42px;
@@ -86,8 +106,7 @@
 
     }
     .git_footer {
-        height: 30%; /* 고정 높이 해제 */
-        padding: 40px 0;
+
       }
       .git_footer img {
         width: 100%;
@@ -97,14 +116,9 @@
         /* width: 80%; */
         font-size: 18px;
       }
-      .contact_all .contact{
-        font-size: 20px;
-        font-weight: 500;
-      }
+
       .info_sns{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+
 }
 .info{
   font-size: 20px;
@@ -126,5 +140,121 @@
 }
 .social h4{
   font-size: 20px;
+}
+}
+
+@media screen and (max-width:1292px){
+  /* footer */
+  .info{
+    display: none;
+  }
+  .sns{
+    width: 100%;
+  }
+        .info_sns{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+}
+.message .send{
+  width: 60%;
+}
+}
+@media screen and (max-width:1024px){
+
+  article .name img{
+    display: none;
+  }
+  .thum1{
+    display: none;
+  }
+  .thum2{
+    display: none;
+  }
+  
+    body {
+    cursor: default !important; /* 모바일에서는 기본 커서 보이게 */
+  }
+  /* 마우스 커서 제거 */
+    .cursor-inner,
+  .cursor-outer {
+    display: none !important;
+  }
+
+.projects .right_con .scroll_btn:hover {
+        color: var(--main-white-color);
+
+    background: none;
+}
+
+}
+
+@media screen and (max-width:430px){
+  header{
+    height: 60px;
+  }
+header nav .logo{
+  right: 10px;
+  width: 50px;
+  height: 50px;
+}
+header nav.shrink{
+  width: 80px;
+}
+header nav ul.navMenu{
+  padding: 0;
+}
+header nav ul li a{
+  font-size: 18px;
+}
+  .main_page{
+    padding-top: 0;
+    height: 680px;
+  }
+  .main_typography{
+
+  }
+  .projects{
+    height: 380px;
+  }
+  .projects .right_con{
+    height: 380px;
+  }
+  .projects .right_con{
+  background-image: none;
+}
+.projects .right_con video{
+  top: 55%;
+}
+.about1{
+  padding: 0;
+  height: 810px;
+}
+.object_text p {
+  width: 80%;
+  font-size: 14px;
+}
+  .skills{
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+  .contact_all .contact{
+    height: 80%;
+    border-radius: 16px;
+  }
+  .projects .right_con .scroll_btn{
+    width: 100%;
+  }
+.projects .right_con p.t{
+  display: none;
+}
+}
+
+@media screen and (max-width:409px){
+
+
+  /* footer */
+.message .send{
+
 }
 }

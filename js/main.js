@@ -505,6 +505,9 @@ const draggableElements = document.querySelectorAll(".tag, .badge, .bubble");
 const cursorInner = document.querySelector(".cursor-inner");
 const cursorOuter = document.querySelector(".cursor-outer");
 
+// 미디어쿼리 조건
+const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+
 let mouseX = 0, mouseY = 0;
 let outerX = 0, outerY = 0;
 let innerX = 0, innerY = 0;
@@ -556,6 +559,11 @@ project.forEach(item => {
   });
 });
 
-
+  // 모바일에서 커서 숨기기
+if (isMobile) {
+  if (cursorOuter) cursorOuter.style.display = "none";
+  if (cursorInner) cursorInner.style.display = "none";
+}
+  
 });
 
