@@ -419,7 +419,6 @@ header nav .logo:hover{
 img.infinite_rotating_logo {
     animation: rotate_image 10s linear infinite;
     transform-origin: 50% 50%;
-    
 }
 
 @keyframes rotate_image {
@@ -488,6 +487,8 @@ article:hover .name img{
     width: 20%;
     height: 100%;
     background-image: url(../img/HD.PNG) ;
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute; /* 중요 */
     pointer-events: none; /* 마우스 안막기 */
     transform: translate(-50%, -50%);
@@ -496,6 +497,8 @@ article:hover .name img{
   }
   .thum2{
     background-image: url(../img/cosmatic.png) ;
+        background-size: contain;
+    background-repeat: no-repeat;
   }
   article:hover .thum1 {
     opacity: 1;
@@ -505,7 +508,16 @@ article:hover .name img{
     /* cursor: url('../img/cursor.png'), auto; */
   }
 
-
+.littlethumb{
+    margin-top: 16px;
+    width: 100%;
+    height: 60%;
+}
+.littlethumb img{
+    width: auto; 
+    height: 100%;
+    display: none;
+}
   /* My Works */
   .my_works{
     width: 100%;
@@ -573,8 +585,8 @@ article:hover .name img{
     opacity: 1;
     z-index: 1;
     border-radius: 50px;
-
   }
+
   /* 링크를 섹션처럼 보이게! */
 .work-link {
     display: flex;
@@ -584,7 +596,6 @@ article:hover .name img{
     height: 100%;
     text-decoration: none;
     color: inherit;
-    background: rgba(255, 255, 255, 0.05);
     border-radius: 40px;
     transition: all 0.3s ease;
     font-size: 4rem;
@@ -592,18 +603,138 @@ article:hover .name img{
     backdrop-filter: blur(4px);
     background-size: cover;
     cursor: none;
+    background-color: #333;
+}
 
-  }
-  .bk1{
-    background-image: url(../img/main_page/work1.png);
-    background-size: cover;
-  }
-  .bk2{
-    background-image: url(../img/main_page/work2.png);
-  }
-  .bk3{
-    background-image: url(../img/main_page/work3.jpg);
-  }
+.all{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-family: 'Pretendard';
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    overflow: hidden;
+}
+.all::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  z-index: 0;
+}
+/* 각각 이미지들*/
+.coca::before{
+    background-image: url(../img/main_page/cocacola.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
+.finpick::before{
+    background-image: url(../img/main_page/finpick.png);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
+.goongle::before{
+    background-image: url(../img/main_page/goongle.png);
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
+.goodgoodmarket::before{
+    background-image: url(../img/main_page/goodgoodmarket.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
+.wavelet::before{
+    background-image: url(../img/main_page/wavelet.png);
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
+
+.worktop{
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #969696;
+    display: flex;
+    padding: 0 100px 8px 100px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.worktop h3{
+    font-size: 30px;
+    font-weight: 500;
+}
+.worktop h4{
+    font-size: 25px;
+    font-weight: 300;
+}
+
+
+.workmiddle{
+    width: 100%;
+    flex: 1;
+    border-bottom: 1px solid #969696;
+    display: flex;
+        padding: 0 100px 8px 100px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.workmiddle h3{
+    font-size: 60px;
+    font-weight: 500;
+}
+.workmiddle h4{
+    font-size: 25px;
+    font-weight: 300;
+}
+
+
+.workbottom{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    padding: 8px 100px 0 100px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.workbottom h4{
+    font-size: 25px;
+    font-weight: 300;
+}
+.workbottom h3{
+    font-size: 60px;
+    font-weight: 500;
+    text-align: right;
+}
+.left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 88px;
+    height: 100%;
+    border-right: 1px solid #969696;
+}
+
+.right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 88px;
+    height: 100%;
+    border-left: 1px solid #969696;
+}
+
 
 
 
@@ -620,10 +751,12 @@ article:hover .name img{
     border-bottom-left-radius: 80px;
     border-bottom-right-radius: 80px;
     overflow: hidden; /* 태그가 밖으로 안 튀어나가게 */
-    background-image: url(../img/myworks.mp4);
+    /* background-image: url(../img/myworks.mp4); */
     /* z-index: 1; */
     z-index: 2;
     pointer-events: auto;
+    overflow-x: hidden;
+    
 }
 
 .tag {
@@ -655,6 +788,7 @@ canvas {
     z-index: 2;
     opacity: 1;
     pointer-events: auto;
+    
 }
 
 #skill_all {
@@ -673,7 +807,6 @@ canvas {
     /* pointer-events: none; */
 /*     opacity: 0;
     visibility: hidden; */
-    opacity: 0.01; /* ✅ 확인용: 보이게 하자 */
     visibility: visible;
     z-index: 2;
     pointer-events: auto;
@@ -998,4 +1131,6 @@ footer{
   .cursor-outer.hover {
     transform: scale(1.5);
   }
-    
+
+
+  

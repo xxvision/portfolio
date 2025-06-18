@@ -161,9 +161,28 @@
 }
 }
 @media screen and (max-width:1024px){
+  header nav ul li a{
+    cursor: pointer;
+  }
+  header nav ul li a:hover{
+
+  }
+  .projects .right_con .scroll_btn{
+    cursor: pointer;
+  }
 
   article .name img{
-    display: none;
+    opacity: 1;
+  }
+  .project1 article h3{
+    color: var(--main-black-color);
+    background: #eee;
+  }
+  article:hover .name h3{
+    color: var(--main-black-color);
+    background: #eee;
+    cursor: pointer;
+
   }
   .thum1{
     display: none;
@@ -171,7 +190,9 @@
   .thum2{
     display: none;
   }
-  
+  .littlethumb img{
+    display: flex;
+  }
     body {
     cursor: default !important; /* 모바일에서는 기본 커서 보이게 */
   }
@@ -182,13 +203,53 @@
   }
 
 .projects .right_con .scroll_btn:hover {
-        color: var(--main-white-color);
-
+    color: var(--main-white-color);
     background: none;
 }
-
+.skills{
+    overflow: hidden;
 }
 
+
+.work-link{
+  cursor: pointer;
+}
+
+.worktop h3{
+  font-size: 25px;
+}
+.worktop h4{
+  font-size: 20px;
+}
+.workmiddle{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.workmiddle h3{
+  font-size: 40px;
+}
+.workmiddle h4{
+  font-size: 20px;
+}
+.workbottom{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.workbottom h4{
+  font-size: 20px;
+}
+.workbottom h3{
+  font-size: 40px;
+}
+}
+@media screen and (max-width:713px){
+  article .name img{
+    display: none;
+}
+}
 @media screen and (max-width:430px){
   header{
     height: 60px;
@@ -223,8 +284,30 @@ header nav ul li a{
   .projects .right_con{
   background-image: none;
 }
+.projects .right_con::after{
+  left: 2.5%;
+}
+.projects .right_con.show-after::after{
+  top: 20%;
+}
 .projects .right_con video{
-  top: 55%;
+  top: 60%;
+}
+.project1 h2{
+    font-size: 30px;
+}
+.project1 .bk{
+  height: 10%;
+}
+img.infinite_rotating_logo{
+  width: 70%;
+}
+.project1 article h3{
+  font-size: 35px;
+}
+.littlethumb img{
+    width: auto; 
+    height: 90%;
 }
 .about1{
   padding: 0;
@@ -247,6 +330,11 @@ header nav ul li a{
   }
 .projects .right_con p.t{
   display: none;
+}
+/* footer */
+.message .send{
+  width: 90%;
+  font-size: 1rem;
 }
 }
 
