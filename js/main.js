@@ -539,9 +539,9 @@ function animateCursor() {
 animateCursor();
 
 
+/* work-item view more 삭제 */
 
-
-workItems.forEach(item => {
+/* workItems.forEach(item => {
   item.addEventListener("mouseenter", () => {
     cursorOuter.classList.add("hover");
     cursorInner.classList.add("hover");
@@ -550,7 +550,7 @@ workItems.forEach(item => {
     cursorOuter.classList.remove("hover");
     cursorInner.classList.remove("hover");
   });
-});
+}); */
 
 project.forEach(item => {
   item.addEventListener("mouseenter", () => {

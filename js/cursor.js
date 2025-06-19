@@ -1,4 +1,4 @@
-/* const cursorInner = document.querySelector(".cursor-inner");
+const cursorInner = document.querySelector(".cursor-inner");
 const cursorOuter = document.querySelector(".cursor-outer");
 
 let mouseX = 0, mouseY = 0;
@@ -19,4 +19,4 @@ function animateOuterCursor() {
   requestAnimationFrame(animateOuterCursor);
 }
 
-animateOuterCursor(); */
+animateOuterCursor();

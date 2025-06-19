@@ -232,6 +232,36 @@
 .workmiddle h4{
   font-size: 20px;
 }
+
+.plan{
+  cursor: pointer;
+}
+.plan a{
+  cursor: pointer;
+}
+.plan:hover{
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+}
+.plan a:hover{
+    cursor: pointer;
+}
+.site{
+  cursor: pointer;
+}
+.site a{
+  cursor: pointer;
+}
+.site:hover{
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+}
+.site a:hover{
+    cursor: pointer;
+}
+
 .workbottom{
   flex-direction: column;
   justify-content: center;
@@ -359,7 +389,15 @@ img.infinite_rotating_logo{
 .workmiddle h4{
   display: none;
 }
-
+.linkall{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
 .workbottom{
   flex: none;
   height: 88px;

@@ -715,7 +715,7 @@ article:hover .name img{
 
   .linkall{
     position: absolute;
-    right:  0;
+    right: 0;
     top: 0;
     padding: 0 88px;
     display: flex;
@@ -727,7 +727,7 @@ article:hover .name img{
     font-weight: 500;
 }
 
-  .plan{
+.plan{
     width: 143px;
     height: 44px;
     font-size: 20px;
@@ -1183,7 +1183,7 @@ footer{
 
   }
 
-/*   .cursor-inner.hover {
+  .cursor-inner.hover {
     width: auto;
     height: auto;
     padding: 4px 8px;
@@ -1206,6 +1206,6 @@ footer{
   .cursor-outer.hover {
     transform: scale(1.5);
   }
- */
+
 
   
