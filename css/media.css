@@ -227,11 +227,38 @@
   justify-content: center;
 }
 .workmiddle h3{
-  font-size: 40px;
+  font-size: 45px;
 }
 .workmiddle h4{
-  font-size: 20px;
+  font-size: 25px;
 }
+
+
+.coca::before{
+    background-size: 60%;
+    background-position: 50% 55%;
+}
+
+.finpick::before{
+    background-size: 35%;
+    background-position: 50% 55%;
+}
+
+.goongle::before{
+    background-size: 55%;
+    background-position: 50% 55%;
+}
+
+.goodgoodmarket::before{
+    background-size: 75%;
+    background-position: 50% 55%;
+}
+
+.wavelet::before{
+    background-size: 80%;
+    background-position: 50% 55%;
+}
+
 
 .plan{
   cursor: pointer;
@@ -269,10 +296,9 @@
 }
 
 .workbottom h4{
-  font-size: 20px;
 }
 .workbottom h3{
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .contact_all .contact:hover{
