@@ -72,6 +72,10 @@ $(function(){
   });
 
   /* get in touch 호버시 이미지 움직임 */
+// ✅ 1줄 추가
+if (window.innerWidth > 1024) {
+
+  // 기존 코드 그대로 ↓
   const git = document.querySelector('.git_footer');
   const footer = document.querySelector('footer');
 
@@ -80,7 +84,7 @@ $(function(){
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const moveX = (x / rect.width - 0.5) * 20; // -10 ~ +10
+    const moveX = (x / rect.width - 0.5) * 20;
     const moveY = (y / rect.height - 0.5) * 20;
 
     git.style.transform = `translate(${moveX}px, ${moveY}px)`;
@@ -90,8 +94,6 @@ $(function(){
     git.style.transform = 'translate(0, 0)';
   });
 
-
-  
   const typography = document.querySelector('.typography');
   const mainPage = document.querySelector('.main_page');
 
@@ -100,7 +102,7 @@ $(function(){
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const moveX = (x / rect.width - 0.5) * 20; // -10 ~ +10
+    const moveX = (x / rect.width - 0.5) * 20;
     const moveY = (y / rect.height - 0.5) * 20;
 
     typography.style.transform = `translate(${moveX}px, ${moveY}px)`;
@@ -109,6 +111,8 @@ $(function(){
   mainPage.addEventListener('mouseleave', () => {
     typography.style.transform = 'translate(0, 0)';
   });
+
+} // ✅ 조건문 닫기
   
 
 /*   $(window).on("scroll", function () {
