@@ -126,6 +126,7 @@ header nav .logo:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .main_typography {
@@ -588,7 +589,7 @@ article:hover .name img{
   }
 
   /* 링크를 섹션처럼 보이게! */
-.work-link {
+    .work-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -618,6 +619,7 @@ article:hover .name img{
     background-position: 50%;
     overflow: hidden;
 }
+
 .all::before {
   content: '';
   position: absolute;
@@ -630,6 +632,7 @@ article:hover .name img{
   background-position: 50%;
   z-index: 0;
 }
+
 /* 각각 이미지들*/
 .coca::before{
     background-image: url(../img/main_page/cocacola.png);
@@ -637,24 +640,28 @@ article:hover .name img{
     background-repeat: no-repeat;
     background-position: 50% 60%;
 }
+
 .finpick::before{
     background-image: url(../img/main_page/finpick.png);
     background-size: 25%;
     background-repeat: no-repeat;
     background-position: 50% 60%;
 }
+
 .goongle::before{
     background-image: url(../img/main_page/goongle.png);
     background-size: 35%;
     background-repeat: no-repeat;
     background-position: 50% 60%;
 }
+
 .goodgoodmarket::before{
     background-image: url(../img/main_page/goodgoodmarket.png);
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: 50% 60%;
 }
+
 .wavelet::before{
     background-image: url(../img/main_page/wavelet.png);
     background-size: 55%;
@@ -703,6 +710,7 @@ article:hover .name img{
 .workbottom{
     width: 100%;
     flex: 1;
+    height: 100%;
     display: flex;
     padding: 8px 100px 0 100px;
     justify-content: space-between;
